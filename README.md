@@ -2,6 +2,12 @@
 
 **Thema**: JPEG, JPEG2000, JPEG XR, JPEG XL, JPEG AI compression to a fixed file size; evaluation with no reference image quality metrics (IQM).
 
+## Running
+
+**Linux**: `$ ./run.sh images/in/*.png`
+
+**Windows (CMD)**: `run.bat images/in/*.png`
+
 ## Tools  
 
 **JPEG**: `cjpeg -quality X`
@@ -24,3 +30,6 @@ General Information: [nfdi4ing.de](https://quality.nfdi4ing.de/en/latest/index.h
 
 **PIQE**: *Perception based Image Quality Evaluator* ([link](https://quality.nfdi4ing.de/en/latest/image_quality/PIQE.html))
 
+## Building Docker Image
+
+`docker buildx build -t mmdf:latest .`
