@@ -1,10 +1,5 @@
-# Use the latest stable Ubuntu image as a base
-FROM ubuntu:24.04
+FROM python:3.13.13-slim-trixie
 
-# Avoid prompts during installation
-ENV DEBIAN_FRONTEND=noninteractive
-
-# Update the package list and install the libraries
 RUN apt-get update && apt-get install -y \
     libjxl-tools \
     libjpeg-tools \
@@ -12,5 +7,8 @@ RUN apt-get update && apt-get install -y \
     libjxr-tools \
     && rm -rf /var/lib/apt/lists/*
 
-# Set a default command to verify installations
-CMD ["/bin/bash"]
+COPY requirements.txt .
+
+RUN pip install -r requirements.txt
+
+WORKDIR /app
