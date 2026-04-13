@@ -1,0 +1,5 @@
+- image quality over compression rate (line graph)
+- compression finden die von der file size (von unten) am nächsten ist (nicht drüber)
+- Image quality metrics die nicht alle ähnlich funktionieren (zu ähnlich)
+- Auflösung des Datensets soll ungefähr gleich sein
+- Nächster Termin 13.04.
