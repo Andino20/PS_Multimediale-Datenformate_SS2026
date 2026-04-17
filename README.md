@@ -6,19 +6,19 @@
 
 There are two run scripts that start a docker container with all JPEG tools installed and that runs `src/main.py` with the given arguments. You would typically pass in an array of path to PNGs that should get converted. At the moment the images are only converted using JXL with a fixed quality argument (TODO: expand python script). Both scripts assume that the docker image is called `mmdf:latest`, where `mmdf` is short for the lecture title "Multimediale Datenformate". 
 
-**Linux**: `$ ./run.sh images/in/*.png`
+**Linux**: `$ ./run.sh <image_folder>/*.png`
 
-**Windows (CMD)**: `run.bat images/in/*.png`
+**Windows (CMD)**: `run.bat <image_folder>/*.png`
 
 ## Tools  
 
-**JPEG**: `cjpeg -quality X`
+**JPEG**: `cjpeg -quality [0..100] fox.ppm`, formats: PPM (PBMPLUS color format), PGM (PBMPLUS gray-scale format), BMP, Targa
 
-**JPEG2000**: `opj_compress -r 20`
+**JPEG2000**: `opj_compress -r [1..] -i fox.ppm -o fox.j2k`, formats: PBM, PGM, PPM, PNM, PAM, PGX, PNG, BMP, TIF, TIFF, RAW, YUV, RAWL, TGA
 
-**JPEG XL**: `cjxl --target_size=51200`
+**JPEG XL**: `cjxl fox.ppm fox.jxl -q [1..100]`, formats: JXL, PPM, PNM, PFM, PAM, PGX, PNG, APNG, GIF, JPEG, EXR
 
-**JPEG XR**: `JxrEncApp -q 0.5`
+**JPEG XR**: `JxrEncApp -q [0.0 .. 1.0] -i fox.ppm -o fox.jxr`, formats: BMP, PNM, TIF, HDR
 
 **JPEG AI**: TBD
 
