@@ -4,7 +4,7 @@
 
 ## Running
 
-There are two run scripts that start a docker container with all JPEG tools installed and that runs `src/main.py` with the given arguments. You would typically pass in an array of path to images that should get compressed.
+There are two run scripts that start a docker container with all JPEG tools installed and that runs `src/main.py` with the given arguments. You would typically pass in an array of path to images that should get compressed. Both scripts assume that the docker image is called `mmdf:latest`, where `mmdf` is short for the lecture title "Multimediale Datenformate". 
 
 **Linux**: `$ ./run.sh <image_folder>/*.png`
 
