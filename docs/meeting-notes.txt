@@ -3,3 +3,10 @@
 - Image quality metrics die nicht alle ähnlich funktionieren (zu ähnlich)
 - Auflösung des Datensets soll ungefähr gleich sein
 - Nächster Termin 13.04.
+
+## 27.04.2026
+- Bei IQMs auf andere research gruppen schauen. Divine, Bliinds ist auch von zB. C. Bovik
+    - PNG -> Metric
+- Jxr Problem beheben (filesize)
+- von komprimierten Dateien wieder zurück zu PNG um IQMs zu bestimmen
+- JPEG AI auf bestimme filesize komprimieren (Approximation und Iteration)
