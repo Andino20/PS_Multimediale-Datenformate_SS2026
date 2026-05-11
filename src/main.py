@@ -33,14 +33,14 @@ def jxl_tool(img: Path, quality: int) -> int:
 
 def jxr_tool(img: Path, quality: int) -> int:
     out_file = get_out_file_path(img=img, extension='.jxr')
-    subprocess.run(['JxrEncApp', '-q', str(quality / 100.0), '-i', str(img), '-o', str(out_file)], 
+    subprocess.run(['JxrEncApp', '-q', str(quality), '-i', str(img), '-o', str(out_file)], 
                 stdout=subprocess.DEVNULL,
                 stderr=subprocess.DEVNULL)
     return out_file.stat().st_size
 
-def run_tool(img: Path, target_size: int, tool: Callable[[Path, int], int]):
-    left = 1
-    right = 101
+def run_tool(img: Path, target_size: int, tool: Callable[[Path, int], int], lowest: int = 1, highest: int = 100, ascending: bool = True):
+    left = lowest
+    right = highest + 1
     
     size = 0
     mid = 0
@@ -50,12 +50,16 @@ def run_tool(img: Path, target_size: int, tool: Callable[[Path, int], int]):
 
         if size == target_size:
             break
-        elif size < target_size:
+        elif size < target_size and ascending:
             left = mid
-        elif size > target_size:
+        elif size > target_size and ascending:
             right = mid
+        elif size < target_size and not ascending:
+            right = mid
+        elif size > target_size and not ascending:
+            left = mid
 
-    size = tool(img, left)
+    size = tool(img, left if ascending else right)
     if size > target_size:
         print(f'Failed to compress {img} to {target_size}B. left = {left} & right = {right}')
 
@@ -78,7 +82,7 @@ def main(tool: str, target_size: int, file_paths: list[Path]):
         elif tool == 'jxl':
             run_tool(img, target_size, jxl_tool)
         elif tool == 'jxr':
-            run_tool(img, target_size, jxr_tool)
+            run_tool(img, target_size, jxr_tool, highest=255, ascending=False)
 
 if __name__ == "__main__":
     typer.run(main)

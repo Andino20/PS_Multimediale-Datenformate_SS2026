@@ -10,3 +10,10 @@
 - Jxr Problem beheben (filesize)
 - von komprimierten Dateien wieder zurück zu PNG um IQMs zu bestimmen
 - JPEG AI auf bestimme filesize komprimieren (Approximation und Iteration)
+
+## 11.05.2026
+- next meeting 08.06.2026
+- Präsentationen am 03.07.2026
+- BRISQUE, NIQE, NIMA, CLIP
+- Grafiken, Prototyp Präsentation
+- Wie erklären wir die Metriken (alle 4 metriken erklären, keine Überschneidung mit anderen Gruppen)
