@@ -17,3 +17,14 @@
 - BRISQUE, NIQE, NIMA, CLIP
 - Grafiken, Prototyp Präsentation
 - Wie erklären wir die Metriken (alle 4 metriken erklären, keine Überschneidung mit anderen Gruppen)
+
+## 15.06.2026
+- Statt X-Achse Compression Ratio -> Ziel Filesize
+- Ausreißerpunkte in den Graphen identifizieren -> vielleicht Klassen an Bilder die gut oder schlecht gehen
+- Graphen putzen (Skala verzerrungen wegen Ausreißern)
+- Bilder an Felix schicken
+- Dataframe erstellen für Grafiken
+- Direkter Vergleich: Ranking zwischen JPEG Varianten (abhängig von Metrik) -> 5 Trendlinien (JPEG Varianten) in 4 Graphen (IQMs) -> Final ranking
+- nächster Termin siehe Email
+- Diskussion der Qualitätsmetriken -> erklären für Dummies (jeder solls verstehen)
+- 

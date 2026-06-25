@@ -33,7 +33,7 @@ def jxl_tool(img: Path, quality: int) -> int:
 
 def jxr_tool(img: Path, quality: int) -> int:
     out_file = get_out_file_path(img=img, extension='.jxr')
-    subprocess.run(['JxrEncApp', '-q', str(quality), '-i', str(img), '-o', str(out_file)], 
+    subprocess.run(['JxrEncApp', '-q', str(quality), '-i', str(img), '-o', str(out_file), '-c', '10'], 
                 stdout=subprocess.DEVNULL,
                 stderr=subprocess.DEVNULL)
     return out_file.stat().st_size

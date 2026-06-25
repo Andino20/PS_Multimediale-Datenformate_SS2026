@@ -1,2 +1,0 @@
-- `dataset/`, input folder containing PPM images to compress 
-- `out/`, compression script output folder. Subdirectories follow the pattern `<tool>/<target_size>/`

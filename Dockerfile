@@ -5,6 +5,7 @@ RUN apt-get update && apt-get install -y \
     libjpeg-tools \
     libopenjp2-tools \
     libjxr-tools \
+    imagemagick \
     && rm -rf /var/lib/apt/lists/*
 
 COPY requirements.txt .
