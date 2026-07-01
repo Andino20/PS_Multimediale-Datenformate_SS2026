@@ -34,11 +34,11 @@ def extract_file_info(decoded_path, encoded_path) -> pd.DataFrame:
                     'jpeg_variant': match.group(1),
                     'target_size_kb': match.group(2),
                     'image_name': match.group(3),
-                    'decoded_size_kb': file_path.stat().st_size / 1024,
+                    'decoded_size_kb': file_path.stat().st_size / 1000,
                 }
 
                 encoded_file_path = Path(encoded_path) / (file_path.stem + '.' + row['jpeg_variant'])
-                row['encoded_size_kb'] = encoded_file_path.stat().st_size / 1024
+                row['encoded_size_kb'] = encoded_file_path.stat().st_size / 1000
 
                 for iqm_name, metric in IQMS.items():
                     try:
